@@ -10,6 +10,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
 }
 main {
   min-height: 90vh;
@@ -93,4 +94,30 @@ footer {
 }
 header {
   justify-content: space-between;
+}
+main h1 {
+  text-align: center;
+  color: #e58900;
+  margin: 10px;
+}
+form {
+  max-width: fit-content;
+  margin: 10px auto;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+section {
+  margin: 10px auto;
+  max-width: 75%;
+}
+.new-post {
+}
+.new-post textarea {
+  width: 100%;
+}
+.new-post input {
+  display: inline-block;
 }
