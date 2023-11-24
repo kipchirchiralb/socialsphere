@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In Page</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <%- include('_header') %>
+    <main>
+      <h1>Log In Page</h1>
+      <form action="/login" class="glass" method="post">
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div class="input-group">
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" />
+        </div>
+        <div class="input-group">
+          <input type="submit" class="btn" value="Log In" />
+        </div>
+      </form>
+    </main>
+    <%- include('_footer') %>
+  </body>
+</html>

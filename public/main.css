@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("/social.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+main {
+  min-height: 90vh;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+nav a {
+  padding: 10px 20px;
+  margin: 0 10px;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+nav a:hover {
+  cursor: pointer;
+  border: 1px solid whitesmoke;
+}
+input,
+select,
+textarea {
+  padding: 10px 20px;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+}
+input:active,
+select:active,
+textarea:active {
+  outline: none;
+}
+.error-message {
+  margin: 100px auto;
+  max-width: 80%;
+  text-align: center;
+}
+.btn {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  color: whitesmoke;
+  background-color: #e58900;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn:hover {
+  filter: brightness(85%);
+}
+
+#confirmpassword {
+  transition: outline 0.3s ease; /* Add a smooth transition effect */
+}
+.error-outline {
+  outline: 2px solid #e58900;
+}
+.glass {
+  background: rgba(139, 106, 5, 0.64);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.2px);
+  color: whitesmoke;
+  padding: 20px;
+}
+.gen-padding {
+  padding: 20px 100px;
+}
+header,
+footer {
+  background: rgba(139, 106, 5, 0.64);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.2px);
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  color: whitesmoke;
+  font-weight: bold;
+}
+header {
+  justify-content: space-between;
+}

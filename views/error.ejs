@@ -4,24 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Error Page</title>
-    <style>
-      body {
-        background-image: url("/notfound.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      .message {
-        margin: 100px auto;
-        max-width: 80%;
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="main.css" />
   </head>
-  <body>
+  <body style="background-image: url('/notfound.jpg')">
     <%- include('_header') %>
     <main>
-      <div class="message">
+      <div class="error-message">
         <h1>Oops!! Something Went Wrong</h1>
         <h3><%=errorMessage%></h3>
       </div>
