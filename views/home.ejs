@@ -7,81 +7,180 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <%- include('_header') %>
-    <main>
-      <h1>Welcome to SocialSphere</h1>
-      <section class="newpost glass">
-        <form class="new-post" action="/create-post" method="post">
-          <textarea name="newpost" id="newpost" rows="4"></textarea>
-          <div>
-            <input type="file" name="postimage" id="postimage" />
-            <input type="submit" class="btn" value="Create New Post" />
+    <div id="backdrop">
+      <%- include('_header') %>
+      <main>
+        <h1>Connect With Experts</h1>
+        <section class="newpost glass">
+          <form class="new-post" action="/create-post" method="post">
+            <textarea name="newpost" id="newpost" rows="4"></textarea>
+            <div>
+              <label for="postimage">Attach Photo</label>
+              <input type="file" name="postimage" id="postimage" />
+              <input type="submit" class="btn" value="Create New Post" />
+            </div>
+          </form>
+        </section>
+
+        <!-- posts -->
+
+        <section class="posts glass">
+          <div class="post" id="post1">
+            <div class="post-header">
+              <img src="user.jpg" alt="User Avatar" class="user-avatar" />
+              <span>Ruth Singen</span>
+            </div>
+            <div class="post-content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              condimentum finibus massa, quis consectetur ligula sodales nec.
+            </div>
+            <div class="post-footer">
+              <span
+                role="button"
+                class="toggle-comments"
+                onclick="toggleComments('post1')"
+                >5 <ion-icon name="chatbox-outline"></ion-icon
+              ></span>
+              <span class="post-likes"
+                >4 <ion-icon name="heart-outline"></ion-icon
+              ></span>
+              <span class="post-date">15th Nov 23</span>
+            </div>
+            <div class="comment-section" id="comments-post1">
+              <div class="comment">
+                <div class="comment-user">
+                  <img src="user.jpg" alt="User Avatar" class="user-avatar" />
+                  <span>Albert Kipchirchir</span>
+                </div>
+                <div>Great post!</div>
+              </div>
+              <div class="comment">
+                <div class="comment-user">
+                  <img src="user.jpg" alt="User Avatar" class="user-avatar" />
+                  <span>Kevin Voke</span>
+                </div>
+                <div>Thanks! I agree.</div>
+              </div>
+            </div>
           </div>
-        </form>
-      </section>
-      <section class="posts glass">
-        <div class="post">
-          <h2>Albert</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
-            aspernatur perferendis neque quidem earum, porro fugit in est
-            temporibus maiores non aliquam aperiam. Voluptatibus dolorum sequi
-            harum accusamus! Deleniti, dolorum.
-          </p>
-          <p>0Likes 2comments 12:00 15/11/2023</p>
-        </div>
-        <div class="post">
-          <h2>Albert</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
-            aspernatur perferendis neque quidem earum, porro fugit in est
-            temporibus maiores non aliquam aperiam. Voluptatibus dolorum sequi
-            harum accusamus! Deleniti, dolorum.
-          </p>
-          <p>0Likes 2comments 12:00 15/11/2023</p>
-        </div>
-        <div class="post">
-          <h2>Albert</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
-            aspernatur perferendis neque quidem earum, porro fugit in est
-            temporibus maiores non aliquam aperiam. Voluptatibus dolorum sequi
-            harum accusamus! Deleniti, dolorum.
-          </p>
-          <p>0Likes 2comments 12:00 15/11/2023</p>
-        </div>
-        <div class="post">
-          <h2>Albert</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
-            aspernatur perferendis neque quidem earum, porro fugit in est
-            temporibus maiores non aliquam aperiam. Voluptatibus dolorum sequi
-            harum accusamus! Deleniti, dolorum.
-          </p>
-          <p>0Likes 2comments 12:00 15/11/2023</p>
-        </div>
-        <div class="post">
-          <h2>Albert</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
-            aspernatur perferendis neque quidem earum, porro fugit in est
-            temporibus maiores non aliquam aperiam. Voluptatibus dolorum sequi
-            harum accusamus! Deleniti, dolorum.
-          </p>
-          <p>0Likes 2comments 12:00 15/11/2023</p>
-        </div>
-        <div class="post">
-          <h2>Albert</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
-            aspernatur perferendis neque quidem earum, porro fugit in est
-            temporibus maiores non aliquam aperiam. Voluptatibus dolorum sequi
-            harum accusamus! Deleniti, dolorum.
-          </p>
-          <p>0Likes 2comments 12:00 15/11/2023</p>
-        </div>
-      </section>
-    </main>
-    <%- include('_footer') %>
+          <div class="post" id="post2">
+            <div class="post-header">
+              <img src="user.jpg" alt="User Avatar" class="user-avatar" />
+              <span>Username1</span>
+            </div>
+            <div class="post-content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              condimentum finibus massa, quis consectetur ligula sodales nec.
+            </div>
+            <div class="post-footer">
+              <span
+                role="button"
+                class="toggle-comments"
+                onclick="toggleComments('post2')"
+                >6 <ion-icon name="chatbox-outline"></ion-icon
+              ></span>
+              <span class="post-likes"
+                >4 <ion-icon name="heart-outline"></ion-icon
+              ></span>
+              <span class="post-date">15th Nov 23</span>
+            </div>
+            <div class="comment-section" id="comments-post2">
+              <div class="comment">
+                <div class="comment-user">Commenter1</div>
+                <div>Great post!</div>
+              </div>
+              <div class="comment">
+                <div class="comment-user">Commenter2</div>
+                <div>Thanks! I agree.</div>
+              </div>
+            </div>
+          </div>
+          <div class="post" id="post3">
+            <div class="post-header">
+              <img src="user.jpg" alt="User Avatar" class="user-avatar" />
+              <span>Username1</span>
+            </div>
+            <div class="post-content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              condimentum finibus massa, quis consectetur ligula sodales nec.
+            </div>
+            <div class="post-footer">
+              <span
+                role="button"
+                class="toggle-comments"
+                onclick="toggleComments('post3')"
+                ><ion-icon name="chatbox-outline"></ion-icon
+              ></span>
+              <span class="post-likes"
+                >4 <ion-icon name="heart-outline"></ion-icon
+              ></span>
+              <span class="post-date">15th Nov 23</span>
+            </div>
+            <div class="comment-section" id="comments-post3">
+              <div class="comment">
+                <div class="comment-user">Commenter1</div>
+                <div>Great post!</div>
+              </div>
+              <div class="comment">
+                <div class="comment-user">Commenter2</div>
+                <div>Thanks! I agree.</div>
+              </div>
+            </div>
+          </div>
+          <div class="post" id="post4">
+            <div class="post-header">
+              <img src="user.jpg" alt="User Avatar" class="user-avatar" />
+              <span>Username1</span>
+            </div>
+            <div class="post-content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              condimentum finibus massa, quis consectetur ligula sodales nec.
+            </div>
+            <div class="post-footer">
+              <span
+                role="button"
+                class="toggle-comments"
+                onclick="toggleComments('post4')"
+                >4<ion-icon name="chatbox-outline"></ion-icon
+              ></span>
+              <span class="post-likes"
+                >4 <ion-icon name="heart-outline"></ion-icon
+              ></span>
+              <span class="post-date">15th Nov 23</span>
+            </div>
+            <div class="comment-section" id="comments-post4">
+              <div class="comment">
+                <div class="comment-user">Commenter1</div>
+                <div>Great post!</div>
+              </div>
+              <div class="comment">
+                <div class="comment-user">Commenter2</div>
+                <div>Thanks! I agree.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <%- include('_footer') %>
+    </div>
+    <script>
+      function toggleComments(postId) {
+        const commentsSection = document.getElementById(`comments-${postId}`);
+        const toggleCommentsBtn = document.querySelector(
+          `#${postId} .toggle-comments`
+        );
+        const commentsVisible = commentsSection.style.display === "block";
+
+        commentsSection.style.display = commentsVisible ? "none" : "block";
+      }
+    </script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>

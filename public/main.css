@@ -12,6 +12,9 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
+#backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
 main {
   min-height: 90vh;
 }
@@ -20,11 +23,16 @@ a {
   color: inherit;
   display: inline-block;
 }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 nav a {
-  padding: 10px 20px;
-  margin: 0 10px;
+  padding: 10px;
+  margin: 0 2px;
   transition: all 0.3s;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 nav a:hover {
   cursor: pointer;
@@ -36,6 +44,7 @@ textarea {
   padding: 10px 20px;
   border: 1px solid darkgrey;
   border-radius: 5px;
+  font: inherit;
 }
 input:active,
 select:active,
@@ -71,21 +80,25 @@ textarea:active {
   outline: 2px solid #e58900;
 }
 .glass {
-  background: rgba(139, 106, 5, 0.64);
+  background: rgba(141, 106, 0, 0.64);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.2px);
+  backdrop-filter: blur(13px);
   color: whitesmoke;
   padding: 20px;
+  font-weight: bold;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
 }
 .gen-padding {
   padding: 20px 100px;
 }
 header,
 footer {
-  background: rgba(139, 106, 5, 0.64);
+  background: rgba(141, 106, 0, 0.64);
+
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.2px);
+  backdrop-filter: blur(13px);
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -95,10 +108,19 @@ footer {
 header {
   justify-content: space-between;
 }
+ion-icon {
+  color: whitesmoke;
+  font-size: 20px;
+  --ionicon-stroke-width: 46px;
+}
+main {
+  padding: 10px;
+}
 main h1 {
   text-align: center;
-  color: #e58900;
+  color: whitesmoke;
   margin: 10px;
+  font-size: 40px;
 }
 form {
   max-width: fit-content;
@@ -114,10 +136,125 @@ section {
   max-width: 75%;
 }
 .new-post {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+.new-post > div {
+  margin-top: auto;
+}
+.new-post > div label {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 16px;
 }
 .new-post textarea {
   width: 100%;
 }
 .new-post input {
   display: inline-block;
+}
+#postimage {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: none;
+}
+
+/* posts */
+
+.post {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.post-header {
+  display: flex;
+
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 7px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.post-content {
+  word-wrap: break-word;
+}
+.post-footer {
+  display: flex;
+  margin-top: 16px;
+  gap: 20px;
+}
+.post-date {
+  margin-left: auto;
+}
+.toggle-comments,
+.post-likes {
+  cursor: pointer;
+  color: whitesmoke;
+  transition: all 0.1s;
+  display: flex;
+  align-items: center;
+}
+.toggle-comments:hover,
+.post-likes:hover,
+ion-icon:hover {
+  transform: scale(1.02);
+  filter: brightness(120%);
+}
+
+.comment-section {
+  margin-top: 10px;
+  display: none; /* Hide comments by default */
+}
+
+.comment {
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.comment-user {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+.comment-user .user-avatar {
+  width: 26px;
+  height: 26px;
+}
+
+@media (max-width: 765px) {
+  .gen-padding {
+    padding: 16px 40px;
+  }
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  section {
+    max-width: 93%;
+  }
+  main h1 {
+    font-size: 33px;
+  }
+  .glass {
+    font-size: 1.05rem;
+  }
+  .new-post {
+    flex-direction: column;
+  }
 }

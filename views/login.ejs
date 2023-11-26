@@ -7,23 +7,29 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <%- include('_header') %>
-    <main>
-      <h1>Log In Page</h1>
-      <form action="/login" class="glass" method="post">
-        <div class="input-group">
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email" />
-        </div>
-        <div class="input-group">
-          <label for="password">Password:</label>
-          <input type="password" name="password" id="password" />
-        </div>
-        <div class="input-group">
-          <input type="submit" class="btn" value="Log In" />
-        </div>
-      </form>
-    </main>
-    <%- include('_footer') %>
+    <div id="backdrop">
+      <%- include('_header') %>
+      <main>
+        <h1>Log In Page</h1>
+        <form action="/login" class="glass" method="post">
+          <div class="input-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div class="input-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <div class="input-group">
+            <input type="submit" class="btn" value="Log In" />
+          </div>
+          <p>
+            New Here?
+            <a href="/signup" style="text-decoration: underline">Sign Up</a>
+          </p>
+        </form>
+      </main>
+      <%- include('_footer') %>
+    </div>
   </body>
 </html>

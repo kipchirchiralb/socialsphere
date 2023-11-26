@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .post {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+      }
+
+      .post-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .user-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .post-content {
+        word-wrap: break-word;
+      }
+
+      .comment-section {
+        margin-top: 10px;
+        display: none; /* Hide comments by default */
+      }
+
+      .comment {
+        border-top: 1px solid #eee;
+        margin-top: 10px;
+        padding-top: 10px;
+      }
+
+      .comment-user {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .toggle-comments {
+        cursor: pointer;
+        color: #1da1f2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sample Posts -->
+    <div class="post" id="post1">
+      <div class="post-header">
+        <img src="user-avatar1.jpg" alt="User Avatar" class="user-avatar" />
+        <span>Username1</span>
+        <span class="toggle-comments" onclick="toggleComments('post1')"
+          >Show Comments</span
+        >
+      </div>
+      <div class="post-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        condimentum finibus massa, quis consectetur ligula sodales nec.
+      </div>
+      <div class="comment-section" id="comments-post1">
+        <div class="comment">
+          <div class="comment-user">Commenter1</div>
+          <div>Great post!</div>
+        </div>
+        <div class="comment">
+          <div class="comment-user">Commenter2</div>
+          <div>Thanks! I agree.</div>
+        </div>
+      </div>
+    </div>
+    <div class="post" id="post2">
+      <div class="post-header">
+        <img src="user-avatar1.jpg" alt="User Avatar" class="user-avatar" />
+        <span>Username1</span>
+        <span class="toggle-comments" onclick="toggleComments('post2')"
+          >Show Comments</span
+        >
+      </div>
+      <div class="post-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        condimentum finibus massa, quis consectetur ligula sodales nec.
+      </div>
+      <div class="comment-section" id="comments-post2">
+        <div class="comment">
+          <div class="comment-user">Commenter1</div>
+          <div>Great post!</div>
+        </div>
+        <div class="comment">
+          <div class="comment-user">Commenter2</div>
+          <div>Thanks! I agree.</div>
+        </div>
+      </div>
+    </div>
+    <div class="post" id="post3">
+      <div class="post-header">
+        <img src="user-avatar1.jpg" alt="User Avatar" class="user-avatar" />
+        <span>Username1</span>
+        <span class="toggle-comments" onclick="toggleComments('post3')"
+          >Show Comments</span
+        >
+      </div>
+      <div class="post-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        condimentum finibus massa, quis consectetur ligula sodales nec.
+      </div>
+      <div class="comment-section" id="comments-post3">
+        <div class="comment">
+          <div class="comment-user">Commenter1</div>
+          <div>Great post!</div>
+        </div>
+        <div class="comment">
+          <div class="comment-user">Commenter2</div>
+          <div>Thanks! I agree.</div>
+        </div>
+      </div>
+    </div>
+    <div class="post" id="post4">
+      <div class="post-header">
+        <img src="user-avatar1.jpg" alt="User Avatar" class="user-avatar" />
+        <span>Username1</span>
+        <span class="toggle-comments" onclick="toggleComments('post4')"
+          >Show Comments</span
+        >
+      </div>
+      <div class="post-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        condimentum finibus massa, quis consectetur ligula sodales nec.
+      </div>
+      <div class="comment-section" id="comments-post4">
+        <div class="comment">
+          <div class="comment-user">Commenter1</div>
+          <div>Great post!</div>
+        </div>
+        <div class="comment">
+          <div class="comment-user">Commenter2</div>
+          <div>Thanks! I agree.</div>
+        </div>
+      </div>
+    </div>
+    <div class="post" id="post5">
+      <div class="post-header">
+        <img src="user-avatar1.jpg" alt="User Avatar" class="user-avatar" />
+        <span>Username1</span>
+        <span class="toggle-comments" onclick="toggleComments('post5')"
+          >Show Comments</span
+        >
+      </div>
+      <div class="post-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        condimentum finibus massa, quis consectetur ligula sodales nec.
+      </div>
+      <div class="comment-section" id="comments-post5">
+        <div class="comment">
+          <div class="comment-user">Commenter1</div>
+          <div>Great post!</div>
+        </div>
+        <div class="comment">
+          <div class="comment-user">Commenter2</div>
+          <div>Thanks! I agree.</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleComments(postId) {
+        const commentsSection = document.getElementById(`comments-${postId}`);
+        const toggleCommentsBtn = document.querySelector(
+          `#${postId} .toggle-comments`
+        );
+        const commentsVisible = commentsSection.style.display === "block";
+
+        commentsSection.style.display = commentsVisible ? "none" : "block";
+        toggleCommentsBtn.textContent = commentsVisible
+          ? "Show Comments"
+          : "Hide Comments";
+      }
+    </script>
+  </body>
+</html>

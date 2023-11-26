@@ -16,6 +16,9 @@ app.get("/about", (req, res) => {
 app.get("/login", (req, res) => {
   res.render("login");
 });
+app.get("/post", (req, res) => {
+  res.render("post");
+});
 app.get("/signup", (req, res) => {
   res.render("signup");
 });
