@@ -5,14 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Profile</title>
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="profile.css  " />
   </head>
   <body>
     <div id="backdrop">
       <%- include('_header') %>
       <main>
         <h1>User Profile</h1>
+        <section class="gen-padding">
+          <div class="profile-container glass">
+            <div class="profile-image">
+              <img src="user.jpg" alt="Profile Image" />
+            </div>
+            <div class="username">John Doe</div>
+            <div class="info">
+              <p>
+                <ion-icon name="mail-outline"></ion-icon> john.doe@example.com
+              </p>
+              <p>
+                <ion-icon name="location-outline"></ion-icon> 123 Main St,
+                Cityville
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
       <%- include('_footer') %>
     </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>
