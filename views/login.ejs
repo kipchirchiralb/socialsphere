@@ -12,6 +12,17 @@
       <main>
         <h1>Log In Page</h1>
         <form action="/login" class="glass" method="post">
+
+          <%if(locals.creationSuccess){%>
+          <p style="color: darkgreen">
+            Account Succefully Created!! You can now Log in.
+          </p>
+          <%}%> 
+
+          <% if(locals.loginError){%>
+          <p style="color: orangered"><%=loginError%></p>
+          <%}%>
+          
           <div class="input-group">
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" />

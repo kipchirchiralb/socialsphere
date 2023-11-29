@@ -17,14 +17,11 @@
             <div class="profile-image">
               <img src="user.jpg" alt="Profile Image" />
             </div>
-            <div class="username">John Doe</div>
+            <div class="username"><%=user.fullName%></div>
             <div class="info">
+              <p><ion-icon name="mail-outline"></ion-icon> <%=user.email%></p>
               <p>
-                <ion-icon name="mail-outline"></ion-icon> john.doe@example.com
-              </p>
-              <p>
-                <ion-icon name="location-outline"></ion-icon> 123 Main St,
-                Cityville
+                <ion-icon name="location-outline"></ion-icon> <%=user.address%>
               </p>
             </div>
           </div>

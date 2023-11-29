@@ -12,6 +12,9 @@
       <main>
         <h1>Sign Up Page</h1>
         <form action="/create-account" class="glass" method="post">
+          <%if(locals.errorMessage){%>
+            <p style="color: orangered"><%=errorMessage%></p>
+          <%}%>
           <div class="input-group">
             <label for="fullname">Full Name: </label>
             <input type="text" name="fullname" id="fullname" />

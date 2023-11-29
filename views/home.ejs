@@ -12,11 +12,21 @@
       <main>
         <h1>Connect With Experts</h1>
         <section class="newpost glass">
-          <form class="new-post" action="/create-post" method="post">
+          <form
+            class="new-post"
+            action="/create-post"
+            method="post"
+            enctype="multipart/form-data"
+          >
             <textarea name="newpost" id="newpost" rows="4"></textarea>
             <div>
               <label for="postimage">Attach Photo</label>
-              <input type="file" name="postimage" id="postimage" />
+              <input
+                type="file"
+                name="postimage"
+                id="postimage"
+                accept=".jpg,.jpeg,.png"
+              />
               <input type="submit" class="btn" value="Create New Post" />
             </div>
           </form>
@@ -25,14 +35,21 @@
         <!-- posts -->
 
         <section class="posts glass">
+          <%posts.forEach(post=>{%>
           <div class="post" id="post1">
             <div class="post-header">
               <img src="user.jpg" alt="User Avatar" class="user-avatar" />
-              <span>Ruth Singen</span>
+              <span><%=post.fullName%></span>
             </div>
             <div class="post-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              condimentum finibus massa, quis consectetur ligula sodales nec.
+              <p><%=post.post%></p>
+              <%if(post.imageLink){%>
+              <img
+                src="/uploads/<%=post.imageLink%>"
+                alt=""
+                style="width: 100%; height: 240px; object-fit: cover"
+              />
+              <%}%>
             </div>
             <div class="post-footer">
               <span
@@ -63,102 +80,7 @@
               </div>
             </div>
           </div>
-          <div class="post" id="post2">
-            <div class="post-header">
-              <img src="user.jpg" alt="User Avatar" class="user-avatar" />
-              <span>Username1</span>
-            </div>
-            <div class="post-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              condimentum finibus massa, quis consectetur ligula sodales nec.
-            </div>
-            <div class="post-footer">
-              <span
-                role="button"
-                class="toggle-comments"
-                onclick="toggleComments('post2')"
-                >6 <ion-icon name="chatbox-outline"></ion-icon
-              ></span>
-              <span class="post-likes"
-                >4 <ion-icon name="heart-outline"></ion-icon
-              ></span>
-              <span class="post-date">15th Nov 23</span>
-            </div>
-            <div class="comment-section" id="comments-post2">
-              <div class="comment">
-                <div class="comment-user">Commenter1</div>
-                <div>Great post!</div>
-              </div>
-              <div class="comment">
-                <div class="comment-user">Commenter2</div>
-                <div>Thanks! I agree.</div>
-              </div>
-            </div>
-          </div>
-          <div class="post" id="post3">
-            <div class="post-header">
-              <img src="user.jpg" alt="User Avatar" class="user-avatar" />
-              <span>Username1</span>
-            </div>
-            <div class="post-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              condimentum finibus massa, quis consectetur ligula sodales nec.
-            </div>
-            <div class="post-footer">
-              <span
-                role="button"
-                class="toggle-comments"
-                onclick="toggleComments('post3')"
-                ><ion-icon name="chatbox-outline"></ion-icon
-              ></span>
-              <span class="post-likes"
-                >4 <ion-icon name="heart-outline"></ion-icon
-              ></span>
-              <span class="post-date">15th Nov 23</span>
-            </div>
-            <div class="comment-section" id="comments-post3">
-              <div class="comment">
-                <div class="comment-user">Commenter1</div>
-                <div>Great post!</div>
-              </div>
-              <div class="comment">
-                <div class="comment-user">Commenter2</div>
-                <div>Thanks! I agree.</div>
-              </div>
-            </div>
-          </div>
-          <div class="post" id="post4">
-            <div class="post-header">
-              <img src="user.jpg" alt="User Avatar" class="user-avatar" />
-              <span>Username1</span>
-            </div>
-            <div class="post-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              condimentum finibus massa, quis consectetur ligula sodales nec.
-            </div>
-            <div class="post-footer">
-              <span
-                role="button"
-                class="toggle-comments"
-                onclick="toggleComments('post4')"
-                >4<ion-icon name="chatbox-outline"></ion-icon
-              ></span>
-              <span class="post-likes"
-                >4 <ion-icon name="heart-outline"></ion-icon
-              ></span>
-              <span class="post-date">15th Nov 23</span>
-            </div>
-            <div class="comment-section" id="comments-post4">
-              <div class="comment">
-                <div class="comment-user">Commenter1</div>
-                <div>Great post!</div>
-              </div>
-              <div class="comment">
-                <div class="comment-user">Commenter2</div>
-                <div>Thanks! I agree.</div>
-              </div>
-            </div>
-          </div>
+          <%})%>
         </section>
       </main>
       <%- include('_footer') %>
